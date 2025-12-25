@@ -1,5 +1,8 @@
 import typer
 # from typing_extensions import Annotated
+from rich.console import Console
+from rich.table import Table
+
 
 app = typer.Typer(
     help = 'utils - small CLI utility',
@@ -7,7 +10,18 @@ app = typer.Typer(
 
 @app.command()
 def demo():
-  typer.echo(f'utils:demo')
+  # typer.echo(f'utils:demo')
+  console = Console()
+  table   = Table(title = 'Demo')
+
+  table.add_column('Name')
+  table.add_column('Status')
+  table.add_column('Foo')
+  table.add_row('Build', 'Done', 'foo:1')
+  table.add_row('Test', 'Running', 'foo:2')
+  table.add_row('Bar', 'Init', 'foo:3')
+
+  console.print(table)
 
 @app.command()
 def version():
