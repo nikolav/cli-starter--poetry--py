@@ -22,11 +22,26 @@ Small command-line utility built with **Python**, **Poetry**, and **Typer**.
 
 ---
 
-## 🚀 Installation (development)
+## 🧰 Install Poetry
 
-Clone the repository and install dependencies:
+If Poetry is not installed yet, install it using the official installer.
 
+### macOS / Linux / WSL
 ```bash
-git clone <your-repo-url>
-cd app0
-poetry install
+$ curl -sSL https://install.python-poetry.org | python3 -
+```
+
+### windows:powershell
+```bash
+$ (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+
+### create virtualenv inside project --optional --recommended
+```bash
+$ poetry config virtualenvs.in-project true
+```
+
+## run command --demo
+```bash
+$ poetry run app0 demo
+```
